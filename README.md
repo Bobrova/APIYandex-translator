@@ -7,3 +7,17 @@ Please use [API key request](https://tech.yandex.com/keys/get/?service=trnsl) fo
 ```
 npm install apiyandex-translator
 ```
+# How to use it
+
+Use the function "textTranslate" to translate text.
+
+```javascript
+    var str = "Hello world!";
+        key = "Your api key";
+        lang = "ru"; // or "en-ru"
+        
+    textTranslate(str, lang, key, function(res, err) {
+      console.log(res); //Всем привет!
+    });
+
+```

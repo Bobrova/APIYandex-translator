@@ -21,3 +21,13 @@ Use the function "textTranslate" to translate text.
     });
 
 ```
+Use the function "identifyLanguage" to determine the language of the text.
+
+```javascript
+    var str = "Hello world!";
+        key = "Your api key";
+        
+    identifyLanguage(str, key, function(res, err) {
+       console.log(res); //en
+    });
+```

@@ -47,23 +47,22 @@ export function getLanguages(id, ui, apiKey, r_handler){
 
 
 function request(url, myInit, method, r_handler){
-    fetch(url, myInit)
-      .then(function(response) {
-        response.text().then(function(text) {
-          var data = JSON.parse(text);
-            switch (method){
-              case 'translate':
-                r_handler(data.text[0]);
-                break;
-              case 'detect':
-                r_handler(data.lang);
-                break;
-              case 'getLanguages':
-                r_handler(data.dirs);
-                break;
-            }
-          });
-      });
-  }
+  fetch(url, myInit).then(function(response) {
+    response.text().then(function(text) {
+      var data = JSON.parse(text);
+        switch (method){
+          case 'translate':
+            r_handler(data.text[0]);
+            break;
+          case 'detect':
+            r_handler(data.lang);
+            break;
+          case 'getLanguages':
+            r_handler(data.dirs);
+            break;
+        }
+    });
+  });
+}
 
 
